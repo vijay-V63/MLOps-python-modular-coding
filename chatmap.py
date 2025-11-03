@@ -16,13 +16,28 @@ class chatmap:
                     Enter here: """)
         
         if choice=='1':
-            self
+            self.register()
         elif choice=='2':
             self
         elif choice=='3':
             self
         else:
             exit
+    
+    def register(self):
+        print("Welcome onboard new user great that your joining our chatmap")
+        user_mail=input("Enter your Email:    ")
+        user_name=input("Enter your Name:   ")
+        in_pass=input("Enter your pasword:   ")
+        co_pass=input("Confirm your password:   ")
+        if in_pass==co_pass:
+            print("User succesfully registered")
+
+        else:
+            print("There is a network glitch or password not matches")
+            print("Thank you and try again...")
+
+
 
 
 obj=chatmap()
