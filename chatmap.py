@@ -96,6 +96,7 @@ class chatmap:
         if self.loggedin==True:
             self.menu_2()
         else:
+            print("please first login to the chatmap")
             self.menu()
 
 
