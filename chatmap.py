@@ -10,8 +10,9 @@ class chatmap:
         choice=input("""enter the users choice & menu is here \n
                     1. press 1 To Register \n
                     2. press 2 To signin \n
-                    3. press 3 To know about company \n
-                    4. press any key to exit \n
+                    3. press 3 To write a post \n
+                    4. press 4 To know about company \n
+                    5. press any key to exit \n
                     
                     Enter here: """)
         
@@ -20,7 +21,24 @@ class chatmap:
         elif choice=='2':
             self.signin()
         elif choice=='3':
-            self
+            self.post()
+        elif choice=='4':
+            self.company()
+        else:
+            exit
+
+    def menu_2(self):
+        choice2=input("""enter the users choice & menu is here \n
+                    1. press 3 To write a post \n
+                    2. press 4 To know about company \n
+                    3. press any key to logout \n
+                    
+                    Enter here: """)
+        
+        if choice2=='3':
+            self.post()
+        elif choice2=='4':
+            self.company()
         else:
             exit
     
@@ -50,10 +68,33 @@ class chatmap:
         if user_mail==self.username and in_pass==self.password:
             self.loggedin=True
             print("😁🫱🏼‍🫲🏼 Logged in Successfully...")
+            self.menu_2()
+
 
         else:
             print("user doesn't exists or data has been breached sorry oops...")
             self.menu()
+
+
+    def post(self):
+        if self.loggedin==False:
+            print("please first login to the chatmap")
+            self.menu()
+        
+        else:
+            post_data=input("Create your valuable post insight here:    ")
+            print("posted successfully...")
+            print(post_data)
+            print("\n")
+            self.menu_2()
+
+    def company(self):
+        print("Company name is ChatMap founded by vijay and raju to learn about python oops through an application...")
+        if self.loggedin==True:
+            self.menu_2()
+        else:
+            self.menu()
+
 
 
 
