@@ -31,7 +31,8 @@ class chatmap:
         choice2=input("""enter the users choice & menu is here \n
                     1. press 3 To write a post \n
                     2. press 4 To know about company \n
-                    3. press any key to logout \n
+                    3. press 5 To send a message or to chat with a friend \n
+                    4. press any key to logout \n
                     
                     Enter here: """)
         
@@ -39,6 +40,8 @@ class chatmap:
             self.post()
         elif choice2=='4':
             self.company()
+        elif choice2=='5':
+            self.msg()
         else:
             exit
     
@@ -95,6 +98,19 @@ class chatmap:
         else:
             self.menu()
 
+
+    def msg(self):
+        if self.loggedin==True:
+            receiver=input("enter the username you wanted to chat with:   ")
+            msge=input("enter your message here:   ")
+            print("\n \n")
+            print(f"Notification: {self.username} sends msg to {receiver}")
+            print(msge)
+            print("\n")
+            self.menu_2()
+
+        else:
+            self.menu()
 
 
 
