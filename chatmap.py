@@ -116,4 +116,5 @@ class chatmap:
 
 
 
-obj=chatmap()
+#commenting object to check the modular coding concept
+#obj=chatmap()
